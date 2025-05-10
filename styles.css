@@ -75,9 +75,13 @@ body {
     padding: 40px;
     border-radius: 10px;
   }
+  .about {
+    background-color: rgba(0, 0, 0, 0.596);
+  }
   
   p {
     font-size: 1.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif; 
   }
   
   /* Section Styles */
@@ -93,7 +97,7 @@ body {
 
   
   .project {
-    background-color: #333333ce;
+    background-color: #333333be;
     padding: 20px;
     margin: 10px 0;
     border-radius: 10px;
