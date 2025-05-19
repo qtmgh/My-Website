@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.167.0/build/three.min.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>This is the Way</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <!--Javascript-->
-  <div id = "three-container"></div>
-  <script src="script.js"></script>
-  
   <!-- Navbar -->
   <nav>
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About Me</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact Me</a></li>
     </ul>
   </nav>
 
@@ -57,3 +52,21 @@
   </section>
 
   <!-- Contact Section -->
+  <!-- Contact Section -->
+<section id="contact">
+  <h2>Contact Me</h2>
+  <form id="contact-form">
+    <label for="name">Name:</label><br/>
+    <input type="text" id="name" name="name" placeholder="Your name" required><br/><br/>
+
+    <label for="email">Email:</label><br/>
+    <input type="email" id="email" name="email" placeholder="Your email" required><br/><br/>
+
+    <label for="message">Message:</label><br/>
+    <textarea id="message" name="message" placeholder="Your message" rows="5" required></textarea><br/><br/>
+
+    <button type="submit">Send</button>
+  </form>
+</section>
+   <script src="script.js"></script>
+</body>
