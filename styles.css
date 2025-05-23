@@ -99,13 +99,23 @@ header {
 /* ----------------------------------
    About Section
 ---------------------------------- */
-#about .about {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 50px;
-  border-radius: 30px;
+
+#about {
+  padding: 60px 20px;
   max-width: 800px;
   margin: auto;
+  text-align: center;
 }
+
+.about-me {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 20px;
+  margin: 20px auto;
+  line-height: 1.6;
+  color: white;
+}
+
 
 /* ----------------------------------
    Projects Section
