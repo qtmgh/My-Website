@@ -1,10 +1,17 @@
+
+/* Custom Font */
+@font-face {
+  font-family: 'Mandalore';
+  src: url('fonts/mandalore.ttf') format('truetype');
+}
+
 /* ----------------------------------
    Global Styles
 ---------------------------------- */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Mandalore', sans-serif;
   color: #f0f0f0;
 
   background-image: url('images/mandalorian2.jpg');
@@ -13,11 +20,6 @@ body {
   background-attachment: fixed;
 }
 
-/* Custom Font */
-@font-face {
-  font-family: 'Mandalore';
-  src: url('fonts/mandalore.ttf') format('truetype');
-}
 
 /* Typography */
 h1, h2, h3 {
@@ -131,15 +133,25 @@ header {
     color: #747474;
   }
 
-/* ----------------------------------
-   Footer (optional placeholder)
----------------------------------- */
-footer {
-  background-color: #1c1c1c;
-  padding: 10px;
+
+/* Social Media Icons */
+.social-icons {
+  margin-top: 30px;
   text-align: center;
-  color: #f0f0f0;
 }
+
+.social-icons a {
+  color: #6d6d6d;
+  font-size: 2rem;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ffffff; /* Gold hover */
+}
+
+
 
 /* Contact Section */
 #contact {
@@ -196,3 +208,4 @@ footer {
 #contact-form button:hover {
   background-color: #ffffff;
 }
+
