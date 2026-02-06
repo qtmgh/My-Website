@@ -7,42 +7,151 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <nav>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+  <nav class="nav">
+    <div class="nav-inner nav-split">
+      <ul class="nav-links nav-left">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+      </ul>
+      <div class="crest crest-center">Miguel Mancera</div>
+      <ul class="nav-links nav-right">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <!-- Hero Section -->
-  <header id="home">
-    <div class="hero-content">
-      <h1>This is the Way</h1>
-      <p>Journey through the galaxy with Miguel Mancera</p>
+  <header id="home" class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1>Tested in chaos. Focused on networks.</h1>
+        <p class="lead">Currently learning Networking Fundamentals, TCP/IP, and OSI Troubleshooting.</p>
+        <div class="hero-chips">
+          <span class="chip">Pronouns: He/Him</span>
+          <span class="chip">Fun fact: Marvel Contest of Champions Player</span>
+        </div>
+      </div>
+      <div class="hero-portrait">
+        <img src="images/miguel.jpg" alt="Miguel Mancera" />
+      </div>
     </div>
   </header>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I'm a Mandalorian who loves coding, exploring the stars, and creating new worlds. Welcome to my portfolio!</p>
+  <section id="about" class="section">
+    <div class="section-inner">
+      <h2>About</h2>
+      <p>
+        Welcome! I’m a Computer Science graduate from California State University,
+        Fullerton, building my craft with strong technical foundations and practical skill to the Outer Rim.
+        I bring disciplined problem solving, software development, and leadership into every
+        mission—focused on clarity, accountability, and steady improvement. I’m always learning
+        new technologies and applying them to real projects with measurable impact. If you need
+        a reliable teammate who values execution and clear communication, consider this my signal
+        across all galaxies.
+      </p>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Current Focus</h3>
+          <p>Networking Fundamentals, TCP/IP, OSI Troubleshooting.</p>
+        </div>
+        <div class="info-card">
+          <h3>Collaboration</h3>
+          <p>OSI Troubleshooting and Packet Analysis.</p>
+        </div>
+        <div class="info-card">
+          <h3>Ask Me About</h3>
+          <p>Machine Learning, Databases, Principles of Software Engineering.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>My Projects</h2>
-    <div class="project">
-      <h3>Project 1</h3>
-      <p>Details about your first project go here.</p>
-    </div>
-    <div class="project">
-      <h3>Project 2</h3>
-      <p>Details about your second project go here.</p>
+  <section id="skills" class="section section-alt">
+    <div class="section-inner">
+      <h2>Skills Arsenal</h2>
+      <div class="skills-grid">
+        <div class="info-card">
+          <h3>Languages</h3>
+          <p>Python, CSS, SQL, HTML, C++.</p>
+        </div>
+        <div class="info-card">
+          <h3>Frameworks</h3>
+          <p>React, Firebase, MySQL, Wireshark, Pandas, Numpy.</p>
+        </div>
+        <div class="info-card">
+          <h3>Tools</h3>
+          <p>Git, Jira, MacOS, Windows.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <
+  <section id="projects" class="section">
+    <div class="section-inner">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <h3>FTP/Client Server</h3>
+          <ul>
+            <li>Built a client-server file transfer system using sockets.</li>
+            <li>Implemented upload and download handling.</li>
+            <li>Learned connection lifecycle, error handling, and protocol flow.</li>
+          </ul>
+          <p class="tech">Technologies: Python, Javascript.</p>
+          <a class="project-link" href="https://github.com/qtmgh/FTPServerClient">View Bounty Log</a>
+        </article>
+        <article class="project-card">
+          <h3>Phishsentry.AI</h3>
+          <ul>
+            <li>Browser extension for phishing detection.</li>
+            <li>Applied machine learning to URL classification.</li>
+            <li>Gained exposure to security workflows and threat detection.</li>
+          </ul>
+          <p class="tech">Technologies: Python, Javascript, CSS, HTML.</p>
+          <a class="project-link" href="https://github.com/SimonLariz/PhishSentry.AI">Open Hunter's Dossier</a>
+        </article>
+        <article class="project-card">
+          <h3>To Do List</h3>
+          <ul>
+            <li>CRUD task management application.</li>
+            <li>Implemented add, edit, and delete flows.</li>
+            <li>Focused on state updates and input validation.</li>
+          </ul>
+          <p class="tech">Technologies: CSS, Javascript, Python.</p>
+          <a class="project-link" href="https://github.com/qtmgh/To-Do-List-">Access Mission Board</a>
+        </article>
+        <article class="project-card">
+          <h3>Pest Control Site</h3>
+          <ul>
+            <li>Delivered a production website for a real client.</li>
+            <li>Designed for fast scanning and clear contact flow.</li>
+            <li>Implemented responsive layout and structured content.</li>
+          </ul>
+          <p class="tech">Technologies: HTML5, CSS, Javascript.</p>
+          <a class="project-link" href="https://github.com/qtmgh/pest-control-site.git">Enter Forge Archive</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section section-alt">
+    <div class="section-inner contact">
+      <h2>Contact</h2>
+      <p>Open to collaboration and network-focused projects. Send a transmission and let's build.</p>
+      <a class="project-link" href="https://www.linkedin.com/in/miguel-mancera-5a3a16217/">LinkedIn Transmission</a>
+      <div class="cta-row">
+        <span class="chip">OSI Troubleshooting</span>
+        <span class="chip">Packet Analysis</span>
+        <span class="chip">Security Workflows</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>This is the Way.</p>
+    <p class="footer-credit">Star Wars and The Mandalorian are trademarks of Lucasfilm Ltd. This fan-themed portfolio is not affiliated with or endorsed by Lucasfilm or Disney.</p>
+  </footer>
+</body>
+</html>
