@@ -7,7 +7,18 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="page-loading">
+  <div id="preloader" class="preloader" aria-live="polite">
+    <div class="preloader-panel">
+      <p class="preloader-title">Calibrating Nav Computer</p>
+      <div class="preloader-ring" aria-hidden="true"></div>
+      <div class="preloader-track" aria-hidden="true">
+        <span></span>
+      </div>
+      <p class="preloader-subtitle">Entering hyperspace...</p>
+    </div>
+  </div>
+
   <nav class="nav">
     <div class="nav-inner nav-split">
       <ul class="nav-links nav-left">
@@ -150,5 +161,30 @@
     <p>This is the Way.</p>
     <p class="footer-credit">Star Wars and The Mandalorian are trademarks of Lucasfilm Ltd. This fan-themed portfolio is not affiliated with or endorsed by Lucasfilm or Disney.</p>
   </footer>
+  <script>
+    (function () {
+      var minDuration = 3000;
+      var start = Date.now();
+      var preloader = document.getElementById('preloader');
+
+      function revealPage() {
+        var elapsed = Date.now() - start;
+        var wait = Math.max(0, minDuration - elapsed);
+
+        window.setTimeout(function () {
+          document.body.classList.add('page-loaded');
+          if (preloader) {
+            preloader.setAttribute('aria-hidden', 'true');
+          }
+        }, wait);
+      }
+
+      if (document.readyState === 'complete') {
+        revealPage();
+      } else {
+        window.addEventListener('load', revealPage, { once: true });
+      }
+    })();
+  </script>
 </body>
 </html>
