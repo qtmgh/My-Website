@@ -34,7 +34,7 @@
     </div>
   </nav>
 
-  <header id="home" class="hero">
+  <header id="home" class="hero" data-reveal>
     <div class="hero-glow"></div>
     <div class="hero-inner">
       <div class="hero-content">
@@ -66,8 +66,8 @@
     </div>
   </header>
 
-  <section id="about" class="section">
-    <div class="section-inner">
+  <section id="about" class="section" data-reveal>
+    <div class="section-inner" data-reveal>
       <h2>About</h2>
       <p>
         Welcome! I’m a Computer Science graduate from California State University,
@@ -79,15 +79,15 @@
         across all galaxies.
       </p>
       <div class="info-grid">
-        <div class="info-card">
+        <div class="info-card" data-reveal>
           <h3>Current Focus</h3>
           <p>Networking Fundamentals, TCP/IP, OSI Troubleshooting.</p>
         </div>
-        <div class="info-card">
+        <div class="info-card" data-reveal>
           <h3>Collaboration</h3>
           <p>OSI Troubleshooting and Packet Analysis.</p>
         </div>
-        <div class="info-card">
+        <div class="info-card" data-reveal>
           <h3>Ask Me About</h3>
           <p>Machine Learning, Databases, Principles of Software Engineering.</p>
         </div>
@@ -95,19 +95,19 @@
     </div>
   </section>
 
-  <section id="skills" class="section section-alt">
-    <div class="section-inner">
+  <section id="skills" class="section section-alt" data-reveal>
+    <div class="section-inner" data-reveal>
       <h2>Skills Arsenal</h2>
       <div class="skills-grid">
-        <div class="info-card">
+        <div class="info-card" data-reveal>
           <h3>Languages</h3>
           <p>Python, CSS, SQL, HTML, C++.</p>
         </div>
-        <div class="info-card">
+        <div class="info-card" data-reveal>
           <h3>Frameworks</h3>
           <p>React, Firebase, MySQL, Wireshark, Pandas, Numpy.</p>
         </div>
-        <div class="info-card">
+        <div class="info-card" data-reveal>
           <h3>Tools</h3>
           <p>Git, Jira, MacOS, Windows.</p>
         </div>
@@ -115,11 +115,33 @@
     </div>
   </section>
 
-  <section id="projects" class="section">
-    <div class="section-inner">
+  <section id="projects" class="section" data-reveal>
+    <div class="section-inner" data-reveal>
       <h2>Projects</h2>
       <div class="projects-grid">
-        <article class="project-card">
+        <article class="project-card" data-reveal>
+          <h3>TARS-Bot</h3>
+          <ul>
+            <li>AI-powered chatbot inspired by TARS from Interstellar.</li>
+            <li>Remembers user names and personalizes responses over time.</li>
+            <li>Adjusts responses from detected emotions: happy, sad, angry, and neutral.</li>
+            <li>Supports customizable humor and technical knowledge response levels.</li>
+            <li>Uses meta-llama/Llama-3.3-70B-Instruct-Turbo for context-aware generation.</li>
+          </ul>
+          <p class="tech">Technologies: Python, LLM APIs, NLP.</p>
+          <a class="project-link" href="https://github.com/qtmgh/TARS-Bot">Open TARS Core</a>
+        </article>
+        <article class="project-card" data-reveal>
+          <h3>Classless Inter-Domain Routing</h3>
+          <ul>
+            <li>Covers CIDR fundamentals in Python.</li>
+            <li>Includes IP allocation and CIDR calculation practice.</li>
+            <li>Contains a mock office scenario and a README study guide.</li>
+          </ul>
+          <p class="tech">Technologies: Python, Networking.</p>
+          <a class="project-link" href="https://github.com/qtmgh/CIDR">Open CIDR Manual</a>
+        </article>
+        <article class="project-card" data-reveal>
           <h3>FTP/Client Server</h3>
           <ul>
             <li>Built a client-server file transfer system using sockets.</li>
@@ -129,7 +151,7 @@
           <p class="tech">Technologies: Python, Javascript.</p>
           <a class="project-link" href="https://github.com/qtmgh/FTPServerClient">View Bounty Log</a>
         </article>
-        <article class="project-card">
+        <article class="project-card" data-reveal>
           <h3>Phishsentry.AI</h3>
           <ul>
             <li>Browser extension for phishing detection.</li>
@@ -139,7 +161,7 @@
           <p class="tech">Technologies: Python, Javascript, CSS, HTML.</p>
           <a class="project-link" href="https://github.com/SimonLariz/PhishSentry.AI">Open Hunter's Dossier</a>
         </article>
-        <article class="project-card">
+        <article class="project-card" data-reveal>
           <h3>To Do List</h3>
           <ul>
             <li>CRUD task management application.</li>
@@ -149,7 +171,7 @@
           <p class="tech">Technologies: CSS, Javascript, Python.</p>
           <a class="project-link" href="https://github.com/qtmgh/To-Do-List-">Access Mission Board</a>
         </article>
-        <article class="project-card">
+        <article class="project-card" data-reveal>
           <h3>Pest Control Site</h3>
           <ul>
             <li>Delivered a production website for a real client.</li>
@@ -163,8 +185,8 @@
     </div>
   </section>
 
-  <section id="contact" class="section section-alt">
-    <div class="section-inner contact">
+  <section id="contact" class="section section-alt" data-reveal>
+    <div class="section-inner contact" data-reveal>
       <h2>Contact</h2>
       <p>Open to collaboration and network-focused projects. Send a transmission and let's build. <b>Note: To access LinkedIn, you need an account!</b></p>
       <a class="project-link" href="https://www.linkedin.com/in/miguel-mancera-5a3a16217/">LinkedIn</a>
@@ -172,7 +194,7 @@
     </div>
   </section>
 
-  <footer class="footer">
+  <footer class="footer" data-reveal>
     <p>This is the Way.</p>
     <p class="footer-credit">Star Wars and The Mandalorian are trademarks of Lucasfilm Ltd. This fan-themed portfolio is not affiliated with or endorsed by Lucasfilm or Disney.</p>
   </footer>
@@ -181,17 +203,139 @@
       var minDuration = 3000;
       var start = Date.now();
       var preloader = document.getElementById('preloader');
+      var hero = document.getElementById('home');
+      var revealNodes = document.querySelectorAll('[data-reveal]');
+      var sectionNodes = document.querySelectorAll('header[id], section[id]');
+      var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+      var mediaReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      var mediaCoarsePointer = window.matchMedia('(hover: none), (pointer: coarse)');
 
       function revealPage() {
         var elapsed = Date.now() - start;
         var wait = Math.max(0, minDuration - elapsed);
 
         window.setTimeout(function () {
+          document.body.classList.add('js-enhanced');
           document.body.classList.add('page-loaded');
           if (preloader) {
             preloader.setAttribute('aria-hidden', 'true');
           }
+          initializeRevealObserver();
+          initializeActiveNav();
+          initializeHeroParallax();
         }, wait);
+      }
+
+      function initializeRevealObserver() {
+        if (!revealNodes.length) {
+          return;
+        }
+
+        if (mediaReducedMotion.matches || !('IntersectionObserver' in window)) {
+          revealNodes.forEach(function (node) {
+            node.classList.add('is-revealed');
+          });
+          return;
+        }
+
+        var revealObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
+
+        revealNodes.forEach(function (node, index) {
+          node.style.setProperty('--reveal-delay', String(Math.min(index * 45, 280)) + 'ms');
+          revealObserver.observe(node);
+        });
+      }
+
+      function initializeActiveNav() {
+        if (!sectionNodes.length || !navLinks.length) {
+          return;
+        }
+
+        var navMap = {};
+        navLinks.forEach(function (link) {
+          navMap[link.getAttribute('href').slice(1)] = link;
+        });
+
+        function setActiveSection(id) {
+          navLinks.forEach(function (link) {
+            link.classList.remove('is-active');
+          });
+          if (navMap[id]) {
+            navMap[id].classList.add('is-active');
+          }
+        }
+
+        var sectionObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              setActiveSection(entry.target.id);
+            }
+          });
+        }, { rootMargin: '-40% 0px -45% 0px', threshold: 0.01 });
+
+        sectionNodes.forEach(function (section) {
+          sectionObserver.observe(section);
+        });
+      }
+
+      function initializeHeroParallax() {
+        if (!hero || mediaReducedMotion.matches) {
+          return;
+        }
+
+        var rafId = 0;
+        var xTarget = 0;
+        var yTarget = 0;
+
+        function applyParallax() {
+          hero.style.setProperty('--hero-parallax-x', xTarget.toFixed(2) + 'px');
+          hero.style.setProperty('--hero-parallax-y', yTarget.toFixed(2) + 'px');
+          rafId = 0;
+        }
+
+        function requestApply() {
+          if (!rafId) {
+            rafId = window.requestAnimationFrame(applyParallax);
+          }
+        }
+
+        if (mediaCoarsePointer.matches) {
+          function onScroll() {
+            var rect = hero.getBoundingClientRect();
+            var progress = Math.max(-1, Math.min(1, rect.top / window.innerHeight));
+            xTarget = 0;
+            yTarget = progress * -6;
+            requestApply();
+          }
+          window.addEventListener('scroll', onScroll, { passive: true });
+          onScroll();
+          return;
+        }
+
+        function onMove(event) {
+          var rect = hero.getBoundingClientRect();
+          var xRatio = ((event.clientX - rect.left) / rect.width) - 0.5;
+          var yRatio = ((event.clientY - rect.top) / rect.height) - 0.5;
+          xTarget = xRatio * 10;
+          yTarget = yRatio * 8;
+          requestApply();
+        }
+
+        function onLeave() {
+          xTarget = 0;
+          yTarget = 0;
+          requestApply();
+        }
+
+        hero.addEventListener('mousemove', onMove);
+        hero.addEventListener('mouseleave', onLeave);
       }
 
       if (document.readyState === 'complete') {
