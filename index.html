@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="page-loading">
+  <div class="scroll-progress" aria-hidden="true">
+    <span id="scrollProgressBar"></span>
+  </div>
+
   <div id="preloader" class="preloader" aria-live="polite">
     <div class="preloader-panel">
       <p class="preloader-title">Calibrating Nav Computer</p>
@@ -36,11 +40,12 @@
 
   <header id="home" class="hero" data-reveal>
     <div class="hero-glow"></div>
+    <div id="heroAura" class="hero-cursor-aura" aria-hidden="true"></div>
     <div class="hero-inner">
       <div class="hero-content">
-        <h1>Tested in chaos. Focused on networks.</h1>
-        <p class="lead">Currently learning Networking Fundamentals, TCP/IP, and OSI Troubleshooting.</p>
-        <div class="hero-chips">
+        <h1 class="hero-line hero-line-1">Tested in chaos. Focused on networks.</h1>
+        <p class="lead hero-line hero-line-2">Currently learning Networking Fundamentals, TCP/IP, and OSI Troubleshooting.</p>
+        <div class="hero-chips hero-line hero-line-3">
           <span class="chip">Pronouns: He/Him</span>
           <span class="chip">Fun fact: Marvel Contest of Champions Player</span>
         </div>
@@ -204,6 +209,8 @@
       var start = Date.now();
       var preloader = document.getElementById('preloader');
       var hero = document.getElementById('home');
+      var heroAura = document.getElementById('heroAura');
+      var scrollProgressBar = document.getElementById('scrollProgressBar');
       var revealNodes = document.querySelectorAll('[data-reveal]');
       var sectionNodes = document.querySelectorAll('header[id], section[id]');
       var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
@@ -220,8 +227,10 @@
           if (preloader) {
             preloader.setAttribute('aria-hidden', 'true');
           }
+          document.body.classList.add('hero-ready');
           initializeRevealObserver();
           initializeActiveNav();
+          initializeScrollProgress();
           initializeHeroParallax();
         }, wait);
       }
@@ -325,17 +334,43 @@
           var yRatio = ((event.clientY - rect.top) / rect.height) - 0.5;
           xTarget = xRatio * 10;
           yTarget = yRatio * 8;
+          if (heroAura) {
+            heroAura.style.setProperty('--aura-x', (event.clientX - rect.left).toFixed(1) + 'px');
+            heroAura.style.setProperty('--aura-y', (event.clientY - rect.top).toFixed(1) + 'px');
+            heroAura.classList.add('is-visible');
+          }
           requestApply();
         }
 
         function onLeave() {
           xTarget = 0;
           yTarget = 0;
+          if (heroAura) {
+            heroAura.classList.remove('is-visible');
+          }
           requestApply();
         }
 
         hero.addEventListener('mousemove', onMove);
         hero.addEventListener('mouseleave', onLeave);
+      }
+
+      function initializeScrollProgress() {
+        if (!scrollProgressBar) {
+          return;
+        }
+
+        function updateProgress() {
+          var doc = document.documentElement;
+          var scrollable = doc.scrollHeight - window.innerHeight;
+          var ratio = scrollable > 0 ? (window.scrollY / scrollable) : 0;
+          var progress = Math.max(0, Math.min(100, ratio * 100));
+          scrollProgressBar.style.width = progress.toFixed(2) + '%';
+        }
+
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        window.addEventListener('resize', updateProgress);
+        updateProgress();
       }
 
       if (document.readyState === 'complete') {
